@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>Madhav Jha · Portfolio</title>
+    <meta
+      name="description"
+      content="Madhav Jha — Computer Science student. Projects, skills, and experience in full‑stack development and DSA."
+    />
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300..900&family=JetBrains+Mono:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <canvas id="bg" aria-hidden="true"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true">
+      <div class="cursor__dot"></div>
+      <div class="cursor__ring"></div>
+    </div>
+
+    <header class="header" data-elevate="false">
+      <div class="header__inner">
+        <a class="brand" href="#home" data-nav>
+          <span class="brand__mark" aria-hidden="true">MJ</span>
+          <span class="brand__text">Madhav Jha</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <a href="#about" data-nav>About</a>
+          <a href="#experience" data-nav>Experience</a>
+          <a href="#projects" data-nav>Projects</a>
+          <a href="#skills" data-nav>Skills</a>
+          <a href="#achievements" data-nav>Achievements</a>
+          <a href="#contact" data-nav>Contact</a>
+        </nav>
+
+        <div class="header__actions">
+          <a class="btn btn--primary" href="#contact" data-nav>Let’s talk</a>
+        </div>
+      </div>
+      <div class="progress" aria-hidden="true"><div class="progress__bar"></div></div>
+    </header>
+
+    <main id="main">
+      <section id="home" class="section hero">
+        <div class="hero__grid">
+          <div class="hero__copy">
+            <p class="eyebrow reveal">Computer Science & Full‑Stack</p>
+            <h1 class="title reveal">
+              I build clean, fast web apps<br />
+              <span class="title__accent">and obsess over details.</span>
+            </h1>
+            <p class="lead reveal">
+              I’m <span class="mono">Madhav Jha</span>, a B.Tech CSE student (2023–2027) who enjoys
+              shipping full‑stack projects and solving DSA problems.
+            </p>
+
+            <div class="hero__cta reveal">
+              <a class="btn btn--primary magnet" href="#projects" data-nav>See projects</a>
+              <a class="btn btn--ghost magnet" href="#experience" data-nav>Experience</a>
+            </div>
+
+            <div class="chips reveal" id="heroChips" aria-label="Highlights"></div>
+
+            <div class="social reveal" aria-label="Social links">
+              <a class="pill" id="linkGithub" href="#" rel="noreferrer" target="_blank">
+                <span class="pill__k">GitHub</span>
+                <span class="pill__v mono" id="githubHandle">set-me</span>
+              </a>
+              <a class="pill" id="linkLinkedIn" href="#" rel="noreferrer" target="_blank">
+                <span class="pill__k">LinkedIn</span>
+                <span class="pill__v mono" id="linkedinHandle">set-me</span>
+              </a>
+              <a class="pill" id="linkLeetCode" href="#" rel="noreferrer" target="_blank">
+                <span class="pill__k">LeetCode</span>
+                <span class="pill__v mono" id="leetcodeHandle">set-me</span>
+              </a>
+              <a class="pill" id="linkCodeforces" href="#" rel="noreferrer" target="_blank">
+                <span class="pill__k">Codeforces</span>
+                <span class="pill__v mono" id="codeforcesHandle">set-me</span>
+              </a>
+              <a class="pill" id="linkGfg" href="#" rel="noreferrer" target="_blank">
+                <span class="pill__k">GFG</span>
+                <span class="pill__v mono" id="gfgHandle">set-me</span>
+              </a>
+              <a class="pill" id="linkEmail" href="#" rel="noreferrer" target="_blank">
+                <span class="pill__k">Email</span>
+                <span class="pill__v mono" id="emailText">set-me</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero__panel reveal" aria-label="Quick stats">
+            <div class="stat">
+              <div class="stat__num" data-count="500" data-suffix="+">0</div>
+              <div class="stat__label">DSA problems solved</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num" data-count="3">0</div>
+              <div class="stat__label">Featured projects</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num" data-count="2027">0</div>
+              <div class="stat__label">Graduation year</div>
+            </div>
+            <div class="panel__hint mono">press <span class="kbd">Ctrl</span>+<span class="kbd">K</span></div>
+          </div>
+        </div>
+
+        <div class="hero__footer reveal">
+          <div class="scrollhint">
+            <span class="scrollhint__dot" aria-hidden="true"></span>
+          
+      </section>
+
+      <section id="about" class="section">
+        <div class="wrap">
+          <h2 class="h2 reveal">About</h2>
+          <div class="grid2">
+            <div class="card reveal">
+              <h3 class="h3">Education</h3>
+              <p class="p" id="educationText"></p>
+              <div class="divider"></div>
+              <h3 class="h3">Focus</h3>
+              <ul class="list" id="focusList"></ul>
+            </div>
+            <div class="card card--glow reveal">
+              <h3 class="h3">What I like building</h3>
+              <ul class="list" id="likesList"></ul>
+              <div class="divider"></div>
+              <p class="p subtle">
+                This site is intentionally “extra”: animated background, magnetic buttons, and scroll reveals.
+                Everything respects <span class="mono">prefers-reduced-motion</span>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="section">
+        <div class="wrap">
+          <h2 class="h2 reveal">Experience</h2>
+          <div class="timeline reveal" id="timeline"></div>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="wrap">
+          <div class="section__head">
+            <h2 class="h2 reveal">Projects</h2>
+            <p class="p subtle reveal">Hover for a tilt. Click for details.</p>
+          </div>
+          <div class="cards reveal" id="projectsGrid"></div>
+        </div>
+      </section>
+
+      <section id="skills" class="section">
+        <div class="wrap">
+          <h2 class="h2 reveal">Skills</h2>
+          <div class="skillgrid reveal" id="skillsGrid"></div>
+        </div>
+      </section>
+
+      <section id="achievements" class="section">
+        <div class="wrap">
+          <h2 class="h2 reveal">Achievements</h2>
+          <div class="card reveal">
+            <ul class="list list--cols" id="achievementsList"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="wrap">
+          <h2 class="h2 reveal">Contact</h2>
+          <div class="grid2">
+            <div class="card reveal">
+              <h3 class="h3">Quick message</h3>
+              <form id="contactForm" class="form" autocomplete="on">
+                <label class="field">
+                  <span class="field__label">Your name</span>
+                  <input class="field__input" name="name" required />
+                </label>
+                <label class="field">
+                  <span class="field__label">Your email</span>
+                  <input class="field__input" name="email" type="email" required />
+                </label>
+                <label class="field">
+                  <span class="field__label">Message</span>
+                  <textarea class="field__input field__input--area" name="message" rows="4" required></textarea>
+                </label>
+                <button class="btn btn--primary magnet" type="submit">Generate email draft</button>
+                <p class="p subtle">
+                  This doesn’t send anything automatically. It opens your email with a prefilled draft.
+                </p>
+              </form>
+            </div>
+
+            <div class="card card--glow reveal">
+              <h3 class="h3">Links</h3>
+              <div class="stack">
+                <a class="rowlink" id="contactEmail" href="#" rel="noreferrer" target="_blank">
+                  <span class="rowlink__k">Email</span>
+                  <span class="rowlink__right">
+                    <span class="rowlink__v mono" id="contactEmailText">set-me</span>
+                    <button class="copybtn" type="button" id="copyEmailBtn" aria-label="Copy email">
+                      Copy
+                    </button>
+                  </span>
+                </a>
+                <a class="rowlink" id="contactGithub" href="#" rel="noreferrer" target="_blank">
+                  <span class="rowlink__k">GitHub</span>
+                  <span class="rowlink__right">
+                    <span class="rowlink__v mono" id="contactGithubText">set-me</span>
+                    <span class="rowlink__open" aria-hidden="true">Open</span>
+                  </span>
+                </a>
+                <a class="rowlink" id="contactLinkedIn" href="#" rel="noreferrer" target="_blank">
+                  <span class="rowlink__k">LinkedIn</span>
+                  <span class="rowlink__right">
+                    <span class="rowlink__v mono" id="contactLinkedInText">set-me</span>
+                    <span class="rowlink__open" aria-hidden="true">Open</span>
+                  </span>
+                </a>
+                <a class="rowlink" id="contactLeetCode" href="#" rel="noreferrer" target="_blank">
+                  <span class="rowlink__k">LeetCode</span>
+                  <span class="rowlink__right">
+                    <span class="rowlink__v mono" id="contactLeetCodeText">set-me</span>
+                    <span class="rowlink__open" aria-hidden="true">Open</span>
+                  </span>
+                </a>
+                <a class="rowlink" id="contactCodeforces" href="#" rel="noreferrer" target="_blank">
+                  <span class="rowlink__k">Codeforces</span>
+                  <span class="rowlink__right">
+                    <span class="rowlink__v mono" id="contactCodeforcesText">set-me</span>
+                    <span class="rowlink__open" aria-hidden="true">Open</span>
+                  </span>
+                </a>
+                <a class="rowlink" id="contactGfg" href="#" rel="noreferrer" target="_blank">
+                  <span class="rowlink__k">GeeksforGeeks</span>
+                  <span class="rowlink__right">
+                    <span class="rowlink__v mono" id="contactGfgText">set-me</span>
+                    <span class="rowlink__open" aria-hidden="true">Open</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer__inner">
+        <div class="mono subtle">© <span id="year"></span> Madhav Jha</div>
+        <div class="mono subtle">Made with <span aria-hidden="true">⚡</span> and CSS</div>
+      </div>
+    </footer>
+
+    <dialog class="modal" id="projectModal" aria-label="Project details">
+      <form method="dialog" class="modal__backdrop">
+        <button class="modal__close" aria-label="Close">Close</button>
+      </form>
+      <div class="modal__panel">
+        <div class="modal__head">
+          <div>
+            <div class="mono subtle" id="modalTag"></div>
+            <h3 class="h3" id="modalTitle"></h3>
+          </div>
+          <form method="dialog">
+            <button class="btn btn--ghost" aria-label="Close modal">Close</button>
+          </form>
+        </div>
+        <p class="p" id="modalDesc"></p>
+        <div class="modal__chips" id="modalChips"></div>
+        <div class="divider"></div>
+        <ul class="list" id="modalBullets"></ul>
+      </div>
+    </dialog>
+
+    <dialog class="palette" id="palette" aria-label="Command palette">
+      <form method="dialog" class="palette__backdrop">
+        <button class="modal__close" aria-label="Close">Close</button>
+      </form>
+      <div class="palette__panel">
+        <div class="palette__head">
+          <div class="mono subtle">Jump to</div>
+          <form method="dialog"><button class="btn btn--ghost">Esc</button></form>
+        </div>
+        <div class="palette__list" id="paletteList"></div>
+      </div>
+    </dialog>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
